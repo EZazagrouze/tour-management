@@ -44,7 +44,7 @@ const Home = () => {
 
             <Col lg='2'>
               <div className="hero__img-box mt-4">
-                <img src={heroVideo} alt="" controls/>
+                <video src={heroVideo} alt="Video Hero" autoPlay muted loop></video>
               </div>
             </Col>
 
