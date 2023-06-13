@@ -72,7 +72,7 @@ const Header = () => {
                 </Button>
                 <Button className='btn primary__btn'>
                   <Link to='/registre'>
-                    Registre
+                    Register
                   </Link>
                 </Button>
               </div>
