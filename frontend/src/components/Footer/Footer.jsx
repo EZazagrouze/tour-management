@@ -95,7 +95,7 @@ const Footer = () => {
                 <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                   <h6 mb-0 d-flex align-items-center gap-2>
                     <span><i class="ri-map-pin-line"></i></span>
-                    Adresse
+                    Address
                   </h6>
                   <p className='mb-0'>NYC, USA</p>
                 </ListGroupItem>

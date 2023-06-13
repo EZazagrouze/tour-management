@@ -12,7 +12,7 @@ const tours = [
     title: "Westminister Bridge",
     city: "London",
     distance: 300,
-    adress:'Somwhere',
+    adress:'Somewhere',
     price: 99,
     maxGroupSize: 10,
     desc: "this is the description",
