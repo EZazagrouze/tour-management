@@ -5,6 +5,8 @@ require('dotenv').config()
 const port = process.env.PORT || 3004
 const cors = require('cors')
 const connectionDB = require('./connection/connection')
+const authroute = require('./routes/auth')
+
 
 
 
@@ -14,6 +16,7 @@ const connectionDB = require('./connection/connection')
 
 app.use(cors())
 app.use(express.json())
+app.use('/api/auth', authroute)
 
 
 
