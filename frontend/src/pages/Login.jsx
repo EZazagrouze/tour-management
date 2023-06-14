@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Container, Row, Col, Form, FormGroup, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import '../styles/login.css';
@@ -16,21 +16,28 @@ const Login = () => {
 
 
   const navigate = useNavigate()
-
-//   const [credentials, setCredentials] = useState({
-//     email: undefined,
-//     password: undefined
-// });
-
-// const handleChange = e => {
-//     setCredentials(prev=>({...prev, [e.target.id]:e.target.value}))
-// }; 
+  
+  const [email, setemail] = useState('')
+  const [password, setpassword] = useState('')
+  const [error, seterror] = useState('')
+  const [succ, setsucc] = useState(false)
 
 
-const [email, setemail] = useState('')
-const [password, setpassword] = useState('')
-const [error, seterror] = useState('')
-const [succ, setsucc] = useState(false)
+useEffect(() =>{
+
+  const storedData = localStorage.getItem('registrationdata')
+  const logindata = storedData ? JSON.parse(storedData) : null
+
+  if(logindata){
+
+    setemail(logindata.email)
+    setpassword(logindata.password)
+
+  }
+
+
+},[])
+
 
 
 const handleemail = (e)=>{

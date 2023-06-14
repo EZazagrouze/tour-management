@@ -23,6 +23,9 @@ const Register = () => {
 
 // });
 
+
+
+
 const navigate = useNavigate()
 
 
@@ -74,6 +77,10 @@ const handleClick = e =>{
       email: email,
       password: password
     }
+
+    // storing data in the localstorage
+
+    localStorage.setItem('registrationdata', JSON.stringify(data))
 
     axios.post('http://localhost:3004/api/auth/register', data)
 

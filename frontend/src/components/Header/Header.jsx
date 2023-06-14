@@ -1,4 +1,4 @@
-import React,{useRef, useEffect} from 'react';
+import React,{useRef, useState, useEffect} from 'react';
 import { Container, Row, Button} from 'reactstrap';
 import { NavLink, Link} from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
@@ -39,6 +39,16 @@ const Header = () => {
     stickyHeaderFunc();
     return window.removeEventListener('scroll', stickyHeaderFunc);
   })
+
+
+  const [username, setusername] = useState('')
+
+
+  useEffect(()=>{
+
+
+
+  },[])
    
 
   return (
