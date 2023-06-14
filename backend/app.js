@@ -8,6 +8,7 @@ const connectionDB = require('./connection/connection')
 
 
 
+// other middlewares
 
 
 
@@ -15,6 +16,33 @@ app.use(cors())
 app.use(express.json())
 
 
+
+
+
+
+// error middleware
+
+
+app.use((err, req, res, next)=>{
+
+    const errorstatus = err.status || StatusCodes.INTERNAL_SERVER_ERROR
+    const errormessage = err.message || 'something went wrong'
+    return res.status(errorstatus).json({
+
+        success:false,
+        status:errorstatus,
+        message:errormessage,
+        stack:err.stack
+    })
+
+
+
+})
+
+
+
+
+// connection to DB
 
 
 const DB = async()=>{
