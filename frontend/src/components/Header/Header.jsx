@@ -71,7 +71,7 @@ const Header = () => {
                   </Link>
                 </Button>
                 <Button className='btn primary__btn'>
-                  <Link to='/registre'>
+                  <Link to='/register'>
                     Register
                   </Link>
                 </Button>

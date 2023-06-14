@@ -10,14 +10,21 @@ import userIcon from '../assets/images/user.png';
 const Login = () => {
 
 
-  const [credentials, setCredentials] = useState({
-    email: undefined,
-    password: undefined
-});
+//   const [credentials, setCredentials] = useState({
+//     email: undefined,
+//     password: undefined
+// });
 
-const handleChange = e => {
-    setCredentials(prev=>({...prev, [e.target.id]:e.target.value}))
-}; 
+// const handleChange = e => {
+//     setCredentials(prev=>({...prev, [e.target.id]:e.target.value}))
+// }; 
+
+
+const [email, setemail] = useState('')
+
+
+
+
 
 const handleClick = e =>{
   e.preventDefault();
