@@ -36,7 +36,23 @@ useEffect(() =>{
   }
 
 
+  const removelsItem = ()=>{
+
+    setTimeout(()=>{
+
+
+      localStorage.removeItem('registrationdata')
+
+
+
+    }, 0.5 * 60 * 60 * 1000)
+  }
+
+
 },[])
+
+
+
 
 
 

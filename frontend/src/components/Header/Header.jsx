@@ -46,6 +46,10 @@ const Header = () => {
 
   useEffect(()=>{
 
+    const localdata = localStorage.getItem('registrationdata')
+    const userdata = localdata ? JSON.parse(localdata) : null
+    
+    setusername(userdata.username)
 
 
   },[])
@@ -80,11 +84,23 @@ const Header = () => {
                     Login
                   </Link>
                 </Button>
+
+                { username ?
+
+                <p className ='rendered-p'>Hello <span className='user-p'>{username}</span></p> :
+                
                 <Button className='btn primary__btn'>
+                
+                  
                   <Link to='/register'>
                     Register
                   </Link>
+
                 </Button>
+                
+              }
+
+
               </div>
 
               <span className='mobile__menu'>
