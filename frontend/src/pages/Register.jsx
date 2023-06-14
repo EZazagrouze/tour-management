@@ -24,7 +24,7 @@ const Register = () => {
 const [username, setusername] = useState('')
 const [email,setemail] = useState('')
 const [password, setpassword] = useState('')
-
+const [error, seterror] = useState('')
 
 // const handleChange = e => {
 //     setCredentials(prev=>({...prev, [e.target.id]:e.target.value}))
@@ -51,12 +51,28 @@ const handleClick = e =>{
 
   e.preventDefault();
 
-  // if(!username || !email || !password){
+  if(!username || !email || !password){
+
+    seterror('Please fill all the fields')
+
+    return
+
+  }
+
+
+  try{
 
 
 
 
-  // }
+  }
+
+  catch(err){
+
+    
+
+
+  }
   
 };
 
