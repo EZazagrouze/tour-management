@@ -41,8 +41,8 @@ const login = async(req, res, next)=>{
 
         //  const {isAdmin, ...otherDetails} = user._doc
 
-         const userObj = user.toObject(); // convert the Mongoose document to a plain object
-         delete userObj.password; // remove the password field
+        //  const userObj = user.toObject(); // convert the Mongoose document to a plain object
+        //  delete userObj.password; // remove the password field
         //  delete userObj.isAdmin
 
         const correctpassword = await user.checkpwd(password)
@@ -59,6 +59,12 @@ const login = async(req, res, next)=>{
         // }).status(StatusCodes.OK).json(userObj)
 
         // login page
+
+
+        if(email && password){
+
+            return res.status(StatusCodes.OK).json({msg: 'You have been logged in successfully'})
+        }
 
     }
 

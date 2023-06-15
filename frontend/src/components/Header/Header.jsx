@@ -48,11 +48,16 @@ const Header = () => {
 
     const localdata = localStorage.getItem('registrationdata')
     const userdata = localdata ? JSON.parse(localdata) : null
+
+    // console.log(userdata)
     
-    setusername(userdata.username)
+    setusername( userdata? userdata.username : '' )
 
 
+    
   },[])
+  
+  // console.log(username)
    
 
   return (

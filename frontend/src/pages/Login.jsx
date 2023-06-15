@@ -36,19 +36,12 @@ useEffect(() =>{
   }
 
 
-  const removelsItem = ()=>{
+  const timeout = setTimeout(() => {
+    localStorage.removeItem('registrationdata');
+    // Perform any other necessary cleanup or actions after the timeout
+  }, 1 * 60 * 1000); // Clear local storage after 30 minutes
 
-    setTimeout(()=>{
-
-
-      localStorage.removeItem('registrationdata')
-
-
-
-    }, 0.5 * 60 * 60 * 1000)
-  }
-
-
+  return () => clearTimeout(timeout); 
 },[])
 
 
