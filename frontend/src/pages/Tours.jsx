@@ -12,12 +12,19 @@ import {Col} from 'reactstrap';
 
 const Tours = () => {
 
-  const [pageCount, setPageCount] = useState(0)
-  const [page, setPage] = useState(0)
+  const [pageCount, setPageCount] = useState(0)  // number of pages needed to display the tours, initially set to 0.
+
+  const [page, setPage] = useState(0)  // represents currently active page, initially set to 0.
 
   useEffect(()=>{
+
     const pages = Math.ceil(5/ 4)
     setPageCount(pages)
+
+  //   The useEffect hook is used to calculate the number of pages based on the total number of tours (in this case, 5) and set the pageCount state variable accordingly.
+
+  //  The effect is triggered whenever the page state variable changes.
+
   },[page])
 
   return (
@@ -42,7 +49,9 @@ const Tours = () => {
               ))
             }
               <Col lg='12'>
+
                 <div className='pagination d-flex align-items-center justify-content-center mt-4 gap-3'>
+                  
                   {[...Array(pageCount).keys()].map(number => (
                     <span key={number} onClick={()=> setPage(number)}
                     className={page===number ? 'active__page' : ''}

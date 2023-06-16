@@ -1,8 +1,13 @@
 import React,{useRef} from 'react'
 import './search-bar.css';
 import {Col, Form, FormGroup } from 'reactstrap';
+import {useNavigate} from 'react-router-dom'
+
 
 const SearchBar = () => {
+
+
+    const navigate = useNavigate()
 
     const locationRef = useRef('')
     const distanceRef = useRef(0)
@@ -16,6 +21,12 @@ const SearchBar = () => {
 
         if(location==='' || distance==='' || maxGroupSize==='')
             return alert('all fields are required!')
+
+            navigate('/tours', {state:{location, distance, maxGroupSize}})
+
+            console.log({state:{location, distance, maxGroupSize}})
+
+        
     }
 
 
