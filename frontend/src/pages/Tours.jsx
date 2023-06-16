@@ -8,9 +8,27 @@ import tourdata from '../assets/data/tours';
 import {Container} from 'reactstrap';
 import {Row} from 'reactstrap';
 import {Col} from 'reactstrap';
+import {useLocation} from 'react-router-dom'
+
 
 
 const Tours = () => {
+
+  const location = useLocation()
+
+  const stateData = location.state
+
+  // console.log(stateData.location)
+
+  // console.log(location)
+
+  const [sbv, setsbv] = useState({
+  
+    location: '',
+    distance:0,
+    maxGroupSize:0
+
+  })
 
   const [pageCount, setPageCount] = useState(0)  // number of pages needed to display the tours, initially set to 0.
 
@@ -27,13 +45,29 @@ const Tours = () => {
 
   },[page])
 
+
+  useEffect(()=>{
+
+    if(stateData){
+
+      setsbv({
+
+        location:stateData.location || 'yujhjhhj',
+        distance:stateData.distance || 0,
+        maxGroupSize:stateData.maxGroupSize || 0
+      })
+    }
+
+
+  }, [stateData])
+
   return (
     <>
-      <CommonSection title={'ALL ttours'}/>
+      <CommonSection title={'All Tours'}/>
       <section>
         <Container>
           <Row>
-            <SearchBar/>
+            <SearchBar searchbarvalues = {sbv}/>
           </Row>
         </Container>
       </section>
@@ -51,7 +85,7 @@ const Tours = () => {
               <Col lg='12'>
 
                 <div className='pagination d-flex align-items-center justify-content-center mt-4 gap-3'>
-                  
+
                   {[...Array(pageCount).keys()].map(number => (
                     <span key={number} onClick={()=> setPage(number)}
                     className={page===number ? 'active__page' : ''}
