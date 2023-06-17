@@ -40,7 +40,7 @@ const SearchBar = ({searchbarvalues}) => {
                 <span><i class="ri-map-pin-fill"></i></span>
                 <div>
                     <h6>Location</h6>
-                    <input type="text" placeholder='where are you going?' defaultValue={searchbarvalues.location} ref={locationRef}/>
+                    <input type="text" placeholder='where are you going?'  ref={locationRef}/>
                 </div>
             </FormGroup>
 
@@ -48,7 +48,7 @@ const SearchBar = ({searchbarvalues}) => {
                 <span><i class="ri-map-pin-time-fill"></i></span>
                 <div>
                     <h6>Distance</h6>
-                    <input type="number" placeholder='distance k/m' defaultValue={searchbarvalues.distance}ref={distanceRef} />
+                    <input type="number" placeholder='distance k/m' ref={distanceRef} />
                 </div>
             </FormGroup>
 
@@ -56,7 +56,7 @@ const SearchBar = ({searchbarvalues}) => {
                 <span><i class="ri-group-fill"></i></span>
                 <div>
                     <h6>Max people</h6>
-                    <input type="number" placeholder='0' defaultValue={searchbarvalues.maxGroupSize} ref={maxGroupSizeRef} />
+                    <input type="number" placeholder='0'  ref={maxGroupSizeRef} />
                 </div>
             </FormGroup>
 

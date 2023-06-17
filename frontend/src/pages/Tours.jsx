@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import CommonSection from '../shared/CommonSection';
 import '../styles/tour.css';
 import Newsletter from '../shared/Newsletter';
@@ -9,6 +9,7 @@ import {Container} from 'reactstrap';
 import {Row} from 'reactstrap';
 import {Col} from 'reactstrap';
 import {useLocation} from 'react-router-dom'
+import {Form, FormGroup } from 'reactstrap';
 
 
 
@@ -67,7 +68,54 @@ const Tours = () => {
       <section>
         <Container>
           <Row>
-            <SearchBar searchbarvalues = {sbv}/>
+
+
+            {/* <SearchBar searchbarvalues ={sbv}/> */}
+
+
+                  {/* OTHER CODE */}
+
+
+                  <div className="search__bar">
+              <Form className='d-flex align-items-center gap-4'>
+                <FormGroup className='d-flex gap-3 form__group form__group-fast'>
+                    <span><i class="ri-map-pin-fill"></i></span>
+                    <div>
+                        <h6>Location</h6>
+                        <input type="text" placeholder={sbv.location}/>
+                    </div>
+                </FormGroup>
+
+                <FormGroup className='d-flex gap-3 form__group form__group-fast'>
+                    <span><i class="ri-map-pin-time-fill"></i></span>
+                    <div>
+                        <h6>Distance</h6>
+                        <input type="number" placeholder={sbv.distance} />
+                    </div>
+                </FormGroup>
+
+                <FormGroup className='d-flex gap-3 form__group form__group-last'>
+                    <span><i class="ri-group-fill"></i></span>
+                    <div>
+                        <h6>Max people</h6>
+                        <input type="number" placeholder={sbv.maxGroupSize} />
+                    </div>
+                </FormGroup>
+
+                <span className='search__icon' type='submit' ><i class="ri-search-2-line"></i></span>
+              </Form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
           </Row>
         </Container>
       </section>
