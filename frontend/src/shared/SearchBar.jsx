@@ -1,8 +1,13 @@
 import React,{useRef} from 'react'
 import './search-bar.css';
 import {Col, Form, FormGroup } from 'reactstrap';
+import {useNavigate} from 'react-router-dom'
 
-const SearchBar = () => {
+
+const SearchBar = ({searchbarvalues}) => {
+
+
+    const navigate = useNavigate()
 
     const locationRef = useRef('')
     const distanceRef = useRef(0)
@@ -16,6 +21,12 @@ const SearchBar = () => {
 
         if(location==='' || distance==='' || maxGroupSize==='')
             return alert('all fields are required!')
+
+            navigate('/tours', {state:{location, distance, maxGroupSize}})
+
+            console.log({state:{location, distance, maxGroupSize}})
+
+        
     }
 
 
@@ -29,7 +40,7 @@ const SearchBar = () => {
                 <span><i class="ri-map-pin-fill"></i></span>
                 <div>
                     <h6>Location</h6>
-                    <input type="text" placeholder='where are you going?' ref={locationRef}/>
+                    <input type="text" placeholder='where are you going?'  ref={locationRef}/>
                 </div>
             </FormGroup>
 
@@ -37,7 +48,7 @@ const SearchBar = () => {
                 <span><i class="ri-map-pin-time-fill"></i></span>
                 <div>
                     <h6>Distance</h6>
-                    <input type="number" placeholder='distance k/m'ref={distanceRef} />
+                    <input type="number" placeholder='distance k/m' ref={distanceRef} />
                 </div>
             </FormGroup>
 
@@ -45,7 +56,7 @@ const SearchBar = () => {
                 <span><i class="ri-group-fill"></i></span>
                 <div>
                     <h6>Max people</h6>
-                    <input type="number" placeholder='0' ref={maxGroupSizeRef} />
+                    <input type="number" placeholder='0'  ref={maxGroupSizeRef} />
                 </div>
             </FormGroup>
 

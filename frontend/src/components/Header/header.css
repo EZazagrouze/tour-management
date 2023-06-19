@@ -1,3 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Gloria+Hallelujah&family=Lato:ital@1&family=Mulish&family=Noto+Sans:ital,wght@0,400;1,300;1,400&family=Poppins:wght@300;400;500;600&family=Shantell+Sans&display=swap');
+
+
+
+
+
 .header {
     width: 100%;
     height: 80px;
@@ -43,4 +50,17 @@
     left: 0;
     box-shadow: 3px 3px 8px -3px #ddd;
     z-index: 999;
+}
+
+.rendered-p{
+
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+.user-p{
+
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Gloria Hallelujah', cursive;
 }

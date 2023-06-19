@@ -95,9 +95,9 @@ const Footer = () => {
                 <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                   <h6 mb-0 d-flex align-items-center gap-2>
                     <span><i class="ri-map-pin-line"></i></span>
-                    Adresse
+                    Address
                   </h6>
-                  <p className='mb-0'>Stylhet, Bangladesh</p>
+                  <p className='mb-0'>NYC, USA</p>
                 </ListGroupItem>
           </ListGroup>
 
@@ -109,7 +109,7 @@ const Footer = () => {
                     <span><i class="ri-mail-fill"></i></span>
                     E-mail
                   </h6>
-                  <p className='mb-0'>mohamed.azagrouze@gmail.com</p>
+                  <p className='mb-0'>reina@gmail.com</p>
                 </ListGroupItem>
           </ListGroup>
 
@@ -121,13 +121,13 @@ const Footer = () => {
                     <span><i class="ri-phone-line"></i></span>
                     Phone
                   </h6>
-                  <p className='mb-0'>+212 6 54 37 74 19</p>
+                  <p className='mb-0'>+126363639</p>
                 </ListGroupItem>
           </ListGroup>
         </Col>
       
         <Col lg='12' className='text-center pt-5' >
-          <p className='copyroght'>copyright {year}, design and develop by Mohamed Azagrouze.
+          <p className='copyroght'>copyright {year}, design and develop by Reina Tamar.
                                   All rights reserved.</p>
         </Col>
 

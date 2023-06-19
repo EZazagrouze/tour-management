@@ -1,4 +1,4 @@
-import React,{useRef, useEffect} from 'react';
+import React,{useRef, useState, useEffect} from 'react';
 import { Container, Row, Button} from 'reactstrap';
 import { NavLink, Link} from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
@@ -39,6 +39,25 @@ const Header = () => {
     stickyHeaderFunc();
     return window.removeEventListener('scroll', stickyHeaderFunc);
   })
+
+
+  const [username, setusername] = useState('')
+
+
+  useEffect(()=>{
+
+    const localdata = localStorage.getItem('registrationdata')
+    const userdata = localdata ? JSON.parse(localdata) : null
+
+    // console.log(userdata)
+    
+    setusername( userdata? userdata.username : '' )
+
+
+    
+  },[])
+  
+  // console.log(username)
    
 
   return (
@@ -70,11 +89,23 @@ const Header = () => {
                     Login
                   </Link>
                 </Button>
+
+                { username ?
+
+                <p className ='rendered-p'>Hello <span className='user-p'>{username}</span></p> :
+                
                 <Button className='btn primary__btn'>
-                  <Link to='/registre'>
-                    Registre
+                
+                  
+                  <Link to='/register'>
+                    Register
                   </Link>
+
                 </Button>
+                
+              }
+
+
               </div>
 
               <span className='mobile__menu'>
